@@ -1,0 +1,26 @@
+rules:
+  - id: sql-string-interpolation
+    patterns:
+      - pattern: |
+          $CURSOR.execute(f"...{$VAR}...")
+    message: SQL injection risk - use parameterised queries
+    languages: [python]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-89"
+      owasp: "A03:2021 - Injection"
+
+  - id: subprocess-shell-injection
+    pattern: subprocess.run($CMD, shell=True, ...)
+    message: Command injection risk - use list form instead
+    languages: [python]
+    severity: ERROR
+    metadata:
+      cwe: "CWE-78"
+      owasp: "A03:2021 - Injection"
+
+  - id: flask-debug-true
+    pattern: app.run(..., debug=True, ...)
+    message: Flask debug mode enabled - never use in production
+    languages: [python]
+    severity: WARNING

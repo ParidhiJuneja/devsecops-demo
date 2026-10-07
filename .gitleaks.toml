@@ -1,0 +1,8 @@
+title = "Gitleaks Config"
+
+[allowlist]
+description = "Allowlisted paths"
+paths = [
+    '''tests/.*''',
+    '''\.gitleaks\.toml''',
+]

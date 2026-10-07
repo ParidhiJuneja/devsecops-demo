@@ -1,0 +1,6 @@
+10016	WARN	No XSS protection header
+10020	WARN	No X-Frame-Options header
+10021	WARN	No X-Content-Type-Options header
+10035	WARN	No HSTS header
+10038	WARN	No Content Security Policy
+10202	FAIL	Missing CSRF tokens
